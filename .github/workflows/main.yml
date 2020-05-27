@@ -31,4 +31,6 @@ jobs:
         # compute its hash and append this to the computed cache's key.
         appendedCacheKey: ${{ hashFiles(env.vcpkgResponseFile) }}
     - name: MSBuild
-      run: msbuild thcrap.sln
+      run: |
+        $VCPKG_ROOT/vcpkg integrate install
+        msbuild thcrap.sln
