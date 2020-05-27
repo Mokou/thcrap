@@ -20,6 +20,8 @@ jobs:
 
     - name: Restore from cache and run vcpkg
       uses: lukka/run-vcpkg@v2
+      env:
+        vcpkgResponseFile: '${{ github.workspace }}/vcpkg.txt'
       with:
         # Response file stored in source control, it provides the list of ports and triplet(s).
         vcpkgArguments: '@${{ github.workspace }}/vcpkg.txt'
@@ -28,6 +30,5 @@ jobs:
         # Since the cache must be invalidated when content of the response file changes, let's
         # compute its hash and append this to the computed cache's key.
         appendedCacheKey: ${{ hashFiles(${{ github.workspace }}/vcpkg.txt) }}
-    
     - name: MSBuild
       run: msbuild thcrap.sln
