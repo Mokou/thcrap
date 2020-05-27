@@ -1,0 +1,8 @@
+jansson
+libogg
+libpng
+libvorbis
+mpg123
+zlib
+--triplet
+x86-windows
