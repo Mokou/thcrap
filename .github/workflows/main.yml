@@ -34,9 +34,8 @@ jobs:
       run: |
         & $env:VCPKG_ROOT/vcpkg integrate install
         msbuild thcrap.sln
-    - name: Zip up build
-      run: Compress-Archive -Path bin/* -DestinationPath thcrap.zip
-    - name: Upload a Build Artifact
+    - name: Upload thcrap.zip
       uses: actions/upload-artifact@v2
       with:
-        path: thcrap.zip
+        name: thcrap.zip
+        path: bin/
