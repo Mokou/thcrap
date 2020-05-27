@@ -10,3 +10,6 @@
 [submodule "libs/135tk"]
 	path = libs/135tk
 	url = https://github.com/brliron/135tk
+[submodule "vcpkg"]
+	path = vcpkg
+	url = https://github.com/Microsoft/vcpkg.git
