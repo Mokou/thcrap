@@ -32,5 +32,5 @@ jobs:
         appendedCacheKey: ${{ hashFiles(env.vcpkgResponseFile) }}
     - name: MSBuild
       run: |
-        $VCPKG_ROOT/vcpkg integrate install
+        & $env:VCPKG_ROOT/vcpkg integrate install
         msbuild thcrap.sln
